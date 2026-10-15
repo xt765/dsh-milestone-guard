@@ -1,0 +1,36 @@
+{
+  "meta": {
+    "title": "Milestone Progress Guard",
+    "description": "Persistently injects milestone reporting rules into the system prompt and adds soft-enforcement reminders when tool calls omit visible progress text."
+  },
+  "config": {
+    "enabled": {
+      "title": "Enable Plugin",
+      "description": "Whether to enable persistent system prompt rules and post-tool-execution soft-enforcement reminders."
+    },
+    "locale": {
+      "title": "Default Language Preset",
+      "description": "Language preset for built-in system prompt and reminder messages (zh / en)."
+    },
+    "sectionOrder": {
+      "title": "System Prompt Section Order",
+      "description": "Sort weight of the injected system prompt section (lower numbers appear earlier, default 180)."
+    },
+    "maxSilentSteps": {
+      "title": "Max Consecutive Silent Steps",
+      "description": "Number of consecutive silent tool-call steps allowed before injecting a reminder (default 0: remind immediately on the first silent step)."
+    },
+    "ignoreTools": {
+      "title": "Ignored Tools",
+      "description": "Tool names excluded from milestone progress reminders when invoked."
+    },
+    "promptText": {
+      "title": "Custom System Prompt Section Text",
+      "description": "Custom rules text injected into the system prompt (falls back to the built-in language preset when empty)."
+    },
+    "reminderText": {
+      "title": "Custom Reminder Text",
+      "description": "Custom notice text prepended to additionalContexts when a silent tool call is detected."
+    }
+  }
+}

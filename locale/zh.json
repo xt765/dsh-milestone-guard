@@ -1,0 +1,36 @@
+{
+  "meta": {
+    "title": "阶段性结论守卫",
+    "description": "常驻注入阶段性进展规范，并在模型调用工具漏发可见结论时自动附加软强制纠偏提醒。"
+  },
+  "config": {
+    "enabled": {
+      "title": "启用插件",
+      "description": "是否启用阶段性结论常驻规范注入与工具执行后软强制提醒。"
+    },
+    "locale": {
+      "title": "默认语言预设",
+      "description": "选择内置 System Prompt 与软强制提醒文本的语言预设（zh / en）。"
+    },
+    "sectionOrder": {
+      "title": "System Prompt 排序权重",
+      "description": "注入到 System Prompt 的段落排序权重（数值越小越靠前，默认 180）。"
+    },
+    "maxSilentSteps": {
+      "title": "允许连续静默步数",
+      "description": "允许模型连续多少步仅调用工具而不输出可见结论（默认 0，即首步漏发立即提醒）。"
+    },
+    "ignoreTools": {
+      "title": "忽略的工具列表",
+      "description": "调用列表中的工具时不触发漏发阶段性结论提醒（例如高频只读工具）。"
+    },
+    "promptText": {
+      "title": "自定义常驻规范文本",
+      "description": "注入到 System Prompt 的阶段性结论规范正文（留空则使用所选语言的内置预设）。"
+    },
+    "reminderText": {
+      "title": "自定义软强制提醒文本",
+      "description": "当检测到模型漏发阶段性结论时前置注入的提醒文本（留空则使用所选语言的内置预设）。"
+    }
+  }
+}

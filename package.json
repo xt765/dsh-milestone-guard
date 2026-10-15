@@ -1,0 +1,57 @@
+{
+  "name": "dsh-milestone-guard",
+  "version": "0.1.0",
+  "description": "Milestone progress soft-enforcement guard plugin for DeepSeek Harness (阶段性结论软强制守卫插件：通过 System Prompt 常驻规范与 tools/post-execute 软强制提醒，确保模型在发起工具调用时同步输出简明的人类可见阶段性结论)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xt765/dsh-milestone-guard.git"
+  },
+  "homepage": "https://github.com/xt765/dsh-milestone-guard#readme",
+  "bugs": {
+    "url": "https://github.com/xt765/dsh-milestone-guard/issues"
+  },
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "files": [
+    "lib",
+    "locale",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "node --test test/*.test.js"
+  },
+  "keywords": [
+    "deepseek-harness",
+    "dsh",
+    "dsh-plugin",
+    "cordis",
+    "ai-agent",
+    "milestone-guard",
+    "prompt-guard"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-client-ui-settings",
+        "@deepseek-ai/dsh-client-ui-plugin-manager"
+      ]
+    }
+  },
+  "license": "MIT"
+}
