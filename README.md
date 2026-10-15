@@ -7,6 +7,10 @@
 1. **黑盒静默调用工具（Silent Tool Calling）**：模型将所有推理过程隐藏在 `<thought>` 块内，随后直接跳到 `<call:...>` 发起数十次工具调用而不输出任何人类可见正文；当 GUI 默认折叠思考过程时，用户只能看到一排工具刷屏，无法获知上一步验证的结论或下一步意图。
 2. **纯文本汇报导致回合误判中断（Premature Turn Termination）**：当开发者在 Prompt 中要求模型“汇报阶段性进展”时，模型容易单独输出一条不带工具调用的纯文本消息，导致 Agent 主循环误判当前回合（Turn）已结束而提前停顿。
 
+![阶段性结论守卫真实运行效果](assets/screenshot-1-guard-flow.png)
+
+![阶段性结论守卫插件配置界面](assets/screenshot-2-settings.png)
+
 ---
 
 ## 核心效果对比 (Before vs. After)
